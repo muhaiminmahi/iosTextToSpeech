@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IosTextToSpeech" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hello , Write something here for converting your text to speech" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8QX-nb-ueD">
+                                <rect key="frame" x="20" y="146" width="353" height="120"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="bx0-5s-UmU"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Your Text Here: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSp-iG-OcE">
+                                <rect key="frame" x="20" y="96" width="165" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5mP-Wn-rLb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wEr-zG-y0x">
+                                <rect key="frame" x="100" y="316" width="193" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Egh-6k-7LG"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Male"/>
+                                    <segment title="Female"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="drr-Bb-bHz"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xz-YH-Qvs">
+                                <rect key="frame" x="20" y="426" width="353" height="376"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="male"/>
+                                <connections>
+                                    <action selector="speakButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jAH-Jv-dxE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="wEr-zG-y0x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="8EK-XH-g5A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7xz-YH-Qvs" secondAttribute="trailing" constant="20" id="B8u-z8-QKK"/>
+                            <constraint firstItem="7xz-YH-Qvs" firstAttribute="top" secondItem="wEr-zG-y0x" secondAttribute="bottom" constant="70" id="Ekr-pF-GdW"/>
+                            <constraint firstItem="eSp-iG-OcE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="96" id="Fo8-pY-srI"/>
+                            <constraint firstItem="8QX-nb-ueD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G2D-sy-kOI"/>
+                            <constraint firstItem="8QX-nb-ueD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="LX6-Zj-59M"/>
+                            <constraint firstItem="eSp-iG-OcE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="SJW-m5-Axi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8QX-nb-ueD" secondAttribute="trailing" constant="20" id="g1c-mG-Sa1"/>
+                            <constraint firstItem="wEr-zG-y0x" firstAttribute="top" secondItem="8QX-nb-ueD" secondAttribute="bottom" constant="50" id="g9B-04-xyj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wEr-zG-y0x" secondAttribute="trailing" constant="100" id="lDz-cG-hUP"/>
+                            <constraint firstItem="8QX-nb-ueD" firstAttribute="top" secondItem="eSp-iG-OcE" secondAttribute="bottom" constant="20" id="ufG-i6-7t7"/>
+                            <constraint firstItem="7xz-YH-Qvs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="upo-HL-vDs"/>
+                            <constraint firstAttribute="bottom" secondItem="7xz-YH-Qvs" secondAttribute="bottom" constant="50" id="wTy-Ty-Fbi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="genderSegment" destination="wEr-zG-y0x" id="mzo-g3-XrS"/>
+                        <outlet property="speakBtn" destination="7xz-YH-Qvs" id="Cg9-K1-mCx"/>
+                        <outlet property="textView" destination="8QX-nb-ueD" id="rMN-Kj-N5g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="49.618320610687022" y="110.56338028169014"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="male" width="512" height="512"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
